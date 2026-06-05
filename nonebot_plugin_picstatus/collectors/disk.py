@@ -1,8 +1,13 @@
 from dataclasses import dataclass
-from typing import TypeAlias
+from typing import Any, TypeAlias
 
 import psutil
-from psutil._common import sdiskio, sdiskpart
+
+try:
+    from psutil._common import sdiskio, sdiskpart
+except ImportError:
+    sdiskio = Any
+    sdiskpart = Any
 
 from ..config import config
 from ..util import match_list_regexp

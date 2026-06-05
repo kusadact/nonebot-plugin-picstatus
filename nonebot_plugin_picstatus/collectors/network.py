@@ -1,11 +1,15 @@
 import asyncio
 import time
 from dataclasses import dataclass
-from typing import TypeAlias
+from typing import Any, TypeAlias
 
 import psutil
 from httpx import AsyncClient, ReadTimeout
-from psutil._common import snetio
+
+try:
+    from psutil._common import snetio
+except ImportError:
+    snetio = Any
 
 from ..config import TestSiteCfg, config
 from ..util import match_list_regexp
