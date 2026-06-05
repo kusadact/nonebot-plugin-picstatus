@@ -23,10 +23,7 @@ def check_empty_arg_rule(arg: BaseMessage = CommandArg()):
 
 
 def trigger_rule():
-    rule = Rule(check_empty_arg_rule)
-    if config.ps_need_at:
-        rule &= to_me()
-    return rule
+    return Rule(check_empty_arg_rule) & to_me()
 
 
 _cmd, *_alias = config.ps_command

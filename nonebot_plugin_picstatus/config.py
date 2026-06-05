@@ -46,7 +46,7 @@ class ConfigModel(BaseModel):
     ps_template: str = "default"
     ps_command: list[str] = ["运行状态", "状态", "zt", "yxzt", "status"]
     ps_only_su: bool = False
-    ps_need_at: bool = False
+    ps_need_at: bool = True
     ps_reply_target: bool = True
     ps_req_timeout: int | None = 10
     # endregion

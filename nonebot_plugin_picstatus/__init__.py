@@ -46,8 +46,7 @@ async def _():
 
 
 usage = f"指令：{' / '.join(config.ps_command)}"
-if config.ps_need_at:
-    usage += "\n注意：使用指令时需要@机器人"
+usage += "\n注意：使用指令时需要@机器人"
 if config.ps_only_su:
     usage += "\n注意：仅SuperUser可以使用此指令"
 
